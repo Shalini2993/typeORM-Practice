@@ -1,16 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm'
+import { ChildEntity, Column } from 'typeorm'
+import { Content } from './Content'
 
-@Entity()
-export class Post {
-  @PrimaryGeneratedColumn()
-  id!: number;
-
-  @Column()
-  name!: String;
+@ChildEntity()
+export class Post extends Content{
 
   @Column()
-  desc!: String;
-
-  @Column()
-  viewCount!: number;
+  viewCount!: number
 }

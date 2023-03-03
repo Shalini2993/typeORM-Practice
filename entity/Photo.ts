@@ -1,16 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm'
+import { Column, ChildEntity } from 'typeorm'
+import { Content } from './Content'
 
-@Entity()
-export class Photo {
-  @PrimaryGeneratedColumn()
-  id!: number;
-
-  @Column()
-  name!: String;
+@ChildEntity()
+export class Photo extends Content{
 
   @Column()
-  desc!: String;
-
-  @Column()
-  size!: string;
+  size!: string
 }

@@ -1,16 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm'
+import { ChildEntity, Column } from 'typeorm'
+import { Content } from './Content'
 
-@Entity()
-export class Question {
-  @PrimaryGeneratedColumn()
-  id!: number;
-
-  @Column()
-  name!: String;
+@ChildEntity()
+export class Question extends Content {
 
   @Column()
-  desc!: String;
-
-  @Column()
-  quesCount!: string;
+  quesCount!: string
 }
