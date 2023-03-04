@@ -5,6 +5,7 @@ import { Card } from './entity/Card';
 import {Post } from './entity/Post'
 import { Content } from './entity/Content'
 import { Photo } from './entity/Photo'
+import { Question } from './entity/Question';
 
 const app = express();
 const port = 4011;
@@ -15,9 +16,9 @@ const AppDataSource = new DataSource({
   port: 3306,
   username: 'root',
   password: 'Shalini29#',
-  database: 'mydatabase',
+  database: 'mydatabase1',
   synchronize: true,
-  entities: [Photo],
+  entities: [User, Card, Post, Content, Photo, Question],
   logging: true
 })
 AppDataSource.initialize()

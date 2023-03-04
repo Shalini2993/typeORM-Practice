@@ -1,7 +1,7 @@
-import { ChildEntity, Column } from 'typeorm'
+import { Entity, Column } from 'typeorm'
 import { Content } from './Content'
 
-@ChildEntity()
+@Entity()
 export class Post extends Content{
 
   @Column()
